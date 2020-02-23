@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- JEM handler -->
+    <script src="main.js"></script>
+  </head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">JEM Generator</h1>
+      <p class="lead">JSON Electrophysiology Meta</p>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Version</span>
+          </div>
+          <input type="text" class="form-control" placeholder="0.1.0" aria-label="0.1.0" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Researcher</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Yizhan Miao</option>
+            <option value="1">Alexis Gorin</option>
+            <option value="2">Judith Hirsch</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Recording Date</span>
+          </div>
+          <input type="date" class="form-control" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Electrode ID</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>unknown</option>
+            <option value="1">H6B-1233</option>
+            <option value="2">H6B-5933</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Subject ID</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Subject ID" aria-label="Subject ID" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Species</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Mouse</option>
+            <option value="1">Rat</option>
+            <option value="2">Ferret</option>
+            <option value="3">Cat</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <p> Bregma Coordinates </p>
+
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">X</span>
+          </div>
+          <input type="number" class="form-control" aria-describedby="basic-addon1">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
