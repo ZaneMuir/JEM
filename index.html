@@ -8,8 +8,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <style> 
+      .no-radius {
+        border-radius: 0rem;
+      }
+      .fixed-90-width{
+        width: 90px
+      }
+      .fixed-65-width{
+        width: 65px
+      }
+      .collapse-btn { 
+        color: #000000; 
+        background-color: #F7F7F7; 
+        border-color: #F7F7F7; 
+      } 
+ 
+    </style>
+
+
     <!-- JEM handler -->
-    <script src="main.js"></script>
+    <script src="jem.js"></script>
   </head>
 
 <body>
@@ -95,29 +114,156 @@
       <div class="col-3">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">X</span>
+            <span class="input-group-text" id="bregma-coordinate-x">X</span>
           </div>
-          <input type="number" class="form-control" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" aria-describedby="bregma-coordinate-x">
         </div>
       </div>
       <div class="col-3">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Y</span>
+            <span class="input-group-text" id="bregma-coordinate-y">Y</span>
           </div>
-          <input type="number" class="form-control" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" aria-describedby="bregma-coordinate-y">
         </div>
       </div>
     </div>
-    <div class="row justify-content-end">
-      <div class="col-1">
-        <button type="button" class="btn btn-outline-secondary">Load </button>
+    <div class="row">
+      <div class="col-2">
+        <button type="button" class="btn btn-outline-secondary">Add Penatration</button>
       </div>
-      <div class="col-1">
-        <button type="button" class="btn btn-outline-secondary">Explore</button>
+      <div class="col-2 offset-7">
+        <button type="button" class="btn btn-outline-secondary fixed-90-width float-right">Load</button>
+      </div>
+      <div class="col-1 ">
+        <button type="button" class="btn btn-outline-secondary fixed-90-width float-right">Export</button>
       </div>
     </div>
-  </div>
 
+    <HR>
+
+    <div class="accordion" id="accordionExample">
+      <div class="card no-radius">
+        <div class="card-header" id="headingOne">
+          <div class="row">
+            <div class="col-11">
+              <button class="btn btn-link collapse-btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Panatration #1
+              </button>
+            </div>
+            <div class="col-1">
+              <button class="btn btn-outline-secondary no-radius float-right" type="button"> 
+              Remove
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+          <div class="card-body">
+            <form>
+              <div class="form-row">
+                <div class="col">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="quality">Quality</span>
+                    </div>
+                  <input type="text" class="form-control" aria-label="quality" aria-describedby="quality">
+                </div>
+          
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="penatration-x">X</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="penatration-x" aria-describedby="penatration-x">
+                </div>
+        
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="penatration-y">Y</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="penatration-y" aria-describedby="penatration-y">
+                </div>
+    
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="penatration-z">Z</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="penatration-z" aria-describedby="penatration-z">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="note">Note</label>
+                  <textarea class="form-control" id="note" rows="6"></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <HR>
+
+          <table class="table">
+            <thead class='thead-light'>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Type</th>
+                <th scope="col">Quality</th>
+                <th scope="col">Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+              </tr>
+    
+            </tbody>
+          </table>
+          <div class="row">
+            <div class="col-1 offset-10">
+              <button type="button" class="add-one-line btn btn-light btn-sm fixed-65-width">Add</button>
+            </div>
+            <div class="col-1">
+              <button type="button" class="btn btn-light btn-sm fixed-65-width">Remove</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+      <div class="card no-radius">
+        <div class="card-header" id="headingTwo">
+          <h4 class="mb-0">
+          <button class="btn btn-secondary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Panatration #2
+          </button>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+          <div class="card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 
+          </div>
+        </div>
+      </div>
+   
+
+    <HR>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
 </body>
 </html>
