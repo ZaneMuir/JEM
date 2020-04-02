@@ -1,269 +1,143 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!DOCTYPE html>
 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <style> 
-      .no-radius {
-        border-radius: 0rem;
-      }
-      .fixed-90-width{
-        width: 90px
-      }
-      .fixed-65-width{
-        width: 65px
-      }
-      .collapse-btn { 
-        color: #000000; 
-        background-color: #F7F7F7; 
-        border-color: #F7F7F7; 
-      } 
- 
-    </style>
-
-
-    <!-- JEM handler -->
     <script src="jem.js"></script>
-  </head>
+</head>
 
 <body>
-  <div class="container">
+    <div class="container">
     <div class="jumbotron">
-      <h1 class="display-4">JEM Generator</h1>
-      <p class="lead">JSON Electrophysiology Meta</p>
+        <h1 class="display-4">JEM Generator</h1>
+        <p class="lead">JSON Electrophysiology Meta</p>
     </div>
 
     <div class="row">
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Version</span>
-          </div>
-          <input type="text" class="form-control" placeholder="0.1.0" aria-label="0.1.0" aria-describedby="basic-addon1">
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="version-label">Version</span>
+                </div>
+                <input id="version-input" class="form-control" type="text" value="0.1.0" aria-describedby="version-label" disabled>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Researcher</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-            <option selected>Yizhan Miao</option>
-            <option value="1">Alexis Gorin</option>
-            <option value="2">Judith Hirsch</option>
-          </select>
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="researcher-label">Researcher</span>
+                </div>
+                <select id="researcher-input" class="custom-select">
+                    <option value="unknown" selected></option>
+                    <option>Yizhan Miao</option>
+                    <option>Alexis Gorin</option>
+                    <option>Seohee Ahn</option>
+                    <option>Judith Hirsch</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="row">
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Recording Date</span>
-          </div>
-          <input type="date" class="form-control" aria-describedby="basic-addon1">
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="recording-date-label">Recording Date</span>
+                </div>
+                <input id="recording-date-input" class="form-control" type="date">
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Electrode ID</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-            <option selected>unknown</option>
-            <option value="1">H6B-1233</option>
-            <option value="2">H6B-5933</option>
-          </select>
+
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Electrode</span>
+                </div>
+                <select id="electrode-input" class="custom-select">
+                    <option value="unknown"></option>
+                    <option>pipette</option>
+                    <option>H6B-1233</option>
+                    <option>H6B-5933</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="row">
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Subject ID</span>
-          </div>
-          <input type="text" class="form-control" placeholder="Subject ID" aria-label="Subject ID" aria-describedby="basic-addon1">
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Subject ID</span>
+                </div>
+                <input id="subject-input" class="form-control" type="text" placeholder="unknown">
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Species</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-            <option selected>Mouse</option>
-            <option value="1">Rat</option>
-            <option value="2">Ferret</option>
-            <option value="3">Cat</option>
-          </select>
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Species</span>
+                </div>
+                <select id="species-input" class="custom-select">
+                    <option selected>Mouse</option>
+                    <option>Rat</option>
+                    <option>Ferret</option>
+                    <option>Cat</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
 
-    <p> Bregma Coordinates </p>
-
+    <p>Bregma Coordinates</p>
     <div class="row">
-      <div class="col-3">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="bregma-coordinate-x">X</span>
-          </div>
-          <input type="text" class="form-control" aria-describedby="bregma-coordinate-x">
+        <div class="col-2">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">X</span>
+                </div>
+                <input id="bregma-X-input" class="form-control" type="text">
+            </div>
         </div>
-      </div>
-      <div class="col-3">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="bregma-coordinate-y">Y</span>
-          </div>
-          <input type="text" class="form-control" aria-describedby="bregma-coordinate-y">
+
+        <div class="col-2">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Y</span>
+                </div>
+                <input id="bregma-Y-input" class="form-control" type="text">
+            </div>
         </div>
-      </div>
+
+        <div class="col">
+            <textarea id="jem-note" placeholder="Notes", rows="3" class="form-control" style="resize: none;"></textarea>
+        </div>
+
     </div>
+    <br />
     <div class="row">
-      <div class="col-2">
-        <button type="button" class="btn btn-outline-secondary">Add Penatration</button>
-      </div>
-      <div class="col-2 offset-7">
-        <button type="button" class="btn btn-outline-secondary fixed-90-width float-right">Load</button>
-      </div>
-      <div class="col-1 ">
-        <button type="button" class="btn btn-outline-secondary fixed-90-width float-right">Export</button>
-      </div>
+        <div class="col-2">
+            <button id="new-pen-button" class="btn btn-outline-secondary">Add Penatration</button>
+        </div>
+        <div class="col-1 offset-8">
+            <button id="export-button" class="btn btn-outline-secondary">Export</button>
+        </div>
+        <div class="col-1">
+            <button id="load-button" class="btn btn-outline-secondary" disabled>Load</button>
+        </div>
+    </div>
     </div>
 
-    <HR>
-
-    <div class="accordion" id="accordionExample">
-      <div class="card no-radius">
-        <div class="card-header" id="headingOne">
-          <div class="row">
-            <div class="col-11">
-              <button class="btn btn-link collapse-btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Panatration #1
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="btn btn-outline-secondary no-radius float-right" type="button"> 
-              Remove
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
-          <div class="card-body">
-            <form>
-              <div class="form-row">
-                <div class="col">
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="quality">Quality</span>
-                    </div>
-                  <input type="text" class="form-control" aria-label="quality" aria-describedby="quality">
-                </div>
-          
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="penatration-x">X</span>
-                  </div>
-                  <input type="text" class="form-control" aria-label="penatration-x" aria-describedby="penatration-x">
-                </div>
-        
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="penatration-y">Y</span>
-                  </div>
-                  <input type="text" class="form-control" aria-label="penatration-y" aria-describedby="penatration-y">
-                </div>
-    
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="penatration-z">Z</span>
-                  </div>
-                  <input type="text" class="form-control" aria-label="penatration-z" aria-describedby="penatration-z">
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-group">
-                  <label for="note">Note</label>
-                  <textarea class="form-control" id="note" rows="6"></textarea>
-                </div>
-              </div>
-            </div>
-          </form>
-
-          <HR>
-
-          <table class="table">
-            <thead class='thead-light'>
-              <tr>
-                <th scope="col">Index</th>
-                <th scope="col">Type</th>
-                <th scope="col">Quality</th>
-                <th scope="col">Note</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-              </tr>
-    
-            </tbody>
-          </table>
-          <div class="row">
-            <div class="col-1 offset-10">
-              <button type="button" class="add-one-line btn btn-light btn-sm fixed-65-width">Add</button>
-            </div>
-            <div class="col-1">
-              <button type="button" class="btn btn-light btn-sm fixed-65-width">Remove</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
+    <div class="container">
+    <hr />
+    <div id="penatration-tables" class="accordion">
+        <!--tables by js-->
     </div>
-    
-      <div class="card no-radius">
-        <div class="card-header" id="headingTwo">
-          <h4 class="mb-0">
-          <button class="btn btn-secondary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Panatration #2
-          </button>
-          </h4>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
-          <div class="card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 
-          </div>
-        </div>
-      </div>
-   
+    <hr/>
+    <div class="jumbotron jumbotron-fluid"">
+        <p class="lead"></p>
+    </div>
+    </div>
 
-    <HR>
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
 </body>
-</html>
