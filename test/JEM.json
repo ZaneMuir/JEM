@@ -1,1 +1,14 @@
-{"version":"0.1.0","Electrode_ID":"H6B_1430","Researcher":"Yizhan Miao","Recording_Date":"2020-02-20","Subject_ID":"G-34-190822-F1","Species":"Mouse","Bregma_Coord":{"X":2.1,"Y":2.8},"Penatration":[{"Index":1,"X":2.1,"Y":2.2,"Z":2.8453,"Quality":2,"Sessions":[],"Notes":""},{"Index":2,"X":1.9,"Y":2.1,"Z":2.7665,"Quality":0,"Sessions":[{"Index":1,"Type":"DSC","Quality":0,"Notes":""},{"Index":2,"Type":"DSC","Quality":0,"Notes":""},{"Index":3,"Type":"RPT","Quality":0,"Notes":""},{"Index":4,"Type":"RPT","Quality":0,"Notes":""}],"Notes":""}]}
+{"version":"0.1.0",
+	"Electrode_ID":"H6B_1430",
+	"Researcher":"Yizhan Miao",
+	"Recording_Date":"2020-02-20",
+	"Subject_ID":"G-34-190822-F1",
+	"Species":"Mouse",
+	"Bregma_Coord":{"X":2.1,"Y":2.8},
+	"Penatration":[
+		{"Index":1,"X":2.1,"Y":2.2,"Z":2.8453,"Quality":2,"Sessions":[],"Notes":""},
+		{"Index":2,"X":1.9,"Y":2.1,"Z":2.7665,"Quality":0,"Sessions":[
+			{"Index":1,"Type":"DSC","Quality":0,"Notes":""},
+			{"Index":2,"Type":"DSC","Quality":0,"Notes":""},
+			{"Index":3,"Type":"RPT","Quality":0,"Notes":""},
+			{"Index":4,"Type":"RPT","Quality":0,"Notes":""}],"Notes":""}]}

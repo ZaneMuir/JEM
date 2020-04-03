@@ -1,0 +1,61 @@
+<div id="pen-table-${idx}" class="card no-radius">
+    <div class="card-header" id="heading-${idx}">
+        <div class="row">
+            <div class="col-11">
+                <button "btn btn-link collapse-btn" data-toggle="collapse" data-target="#collapse-${idx}" aria-expanded="true" aria-controls="collapse-${idx}">
+                    Penatration #${idx}
+                </button>
+            </div>
+            <div class="col-1">
+                <button id="pen-table-${idx}-remove-btn" class="btn btn-outline-secondary no-radius float-right" type="button">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="collapse-${idx}" class="collapse show" aria-labelledby="heading-${idx}">
+        <div class="card-body">
+            <form class="pen-table-meta">
+                <span>Penatration #</span><span class="pen-table-index">${idx}</span>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">X</span>
+                            </div>
+                            <input class="pen-meta-X form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Y</span>
+                            </div>
+                            <input class="pen-meta-Y form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Z</span>
+                            </div>
+                            <input class="pen-meta-Z form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Quality</span>
+                            </div>
+                            <input class="pen-meta-quality form-control" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <textarea class="pen-meta-notes form-control" rows="3" placeholder="notes"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,108 +1,144 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!DOCTYPE html>
 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <!-- JEM handler -->
-    <script src="main.js"></script>
-  </head>
+    <script src="jem.js"></script>
+</head>
 
 <body>
-  <div class="container">
+    <div class="container">
     <div class="jumbotron">
-      <h1 class="display-4">JEM Generator</h1>
-      <p class="lead">JSON Electrophysiology Meta</p>
+        <h1 class="display-4">JEM Generator</h1>
+        <p class="lead">JSON Electrophysiology Meta</p>
     </div>
 
     <div class="row">
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Version</span>
-          </div>
-          <input type="text" class="form-control" placeholder="0.1.0" aria-label="0.1.0" aria-describedby="basic-addon1">
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="version-label">Version</span>
+                </div>
+                <input id="version-input" class="form-control" type="text" value="0.1.0" aria-describedby="version-label" disabled>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Researcher</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-            <option selected>Yizhan Miao</option>
-            <option value="1">Alexis Gorin</option>
-            <option value="2">Judith Hirsch</option>
-          </select>
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="researcher-label">Researcher</span>
+                </div>
+                <select id="researcher-input" class="custom-select">
+                    <option value="unknown" selected></option>
+                    <option>Yizhan Miao</option>
+                    <option>Alexis Gorin</option>
+                    <option>Seohee Ahn</option>
+                    <option>Judith Hirsch</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="row">
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Recording Date</span>
-          </div>
-          <input type="date" class="form-control" aria-describedby="basic-addon1">
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="recording-date-label">Recording Date</span>
+                </div>
+                <input id="recording-date-input" class="form-control" type="date">
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Electrode ID</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-            <option selected>unknown</option>
-            <option value="1">H6B-1233</option>
-            <option value="2">H6B-5933</option>
-          </select>
+
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Electrode</span>
+                </div>
+                <select id="electrode-input" class="custom-select">
+                    <option value="unknown"></option>
+                    <option>pipette</option>
+                    <option>H6B-1233</option>
+                    <option>H6B-5933</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="row">
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Subject ID</span>
-          </div>
-          <input type="text" class="form-control" placeholder="Subject ID" aria-label="Subject ID" aria-describedby="basic-addon1">
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Subject ID</span>
+                </div>
+                <input id="subject-input" class="form-control" type="text" placeholder="unknown">
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Species</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-            <option selected>Mouse</option>
-            <option value="1">Rat</option>
-            <option value="2">Ferret</option>
-            <option value="3">Cat</option>
-          </select>
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Species</span>
+                </div>
+                <select id="species-input" class="custom-select">
+                    <option selected>Mouse</option>
+                    <option>Rat</option>
+                    <option>Ferret</option>
+                    <option>Cat</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
 
-    <p> Bregma Coordinates </p>
-
+    <p>Bregma Coordinates</p>
     <div class="row">
-      <div class="col">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">X</span>
-          </div>
-          <input type="number" class="form-control" aria-describedby="basic-addon1">
+        <div class="col-2">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">X</span>
+                </div>
+                <input id="bregma-X-input" class="form-control" type="text">
+            </div>
         </div>
-      </div>
+
+        <div class="col-2">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Y</span>
+                </div>
+                <input id="bregma-Y-input" class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col">
+            <textarea id="jem-note" placeholder="Notes", rows="3" class="form-control" style="resize: none;"></textarea>
+        </div>
+
+    </div>
+    <br />
+    <div class="row justify-content-between">
+        <div class="col-2">
+            <button id="new-pen-button" class="btn btn-outline-secondary">Add Penatration</button>
+        </div>
+
+        <div class="col-2">
+            <div class="btn-group" role="group">
+                <button id="export-button" class="btn btn-outline-secondary">Export</button>
+                <button id="load-button" class="btn btn-outline-secondary" disabled>Load</button>
+            </div>
+        </div>
+    </div>
     </div>
 
-  </div>
+    <div class="container">
+    <hr />
+    <div id="penatration-tables" class="accordion">
+        <!--tables by js-->
+    </div>
+    <hr/>
+    <div class="jumbotron jumbotron-fluid"">
+        <p class="lead"></p>
+    </div>
+    </div>
 
 </body>
-</html>
