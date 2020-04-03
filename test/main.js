@@ -4,7 +4,7 @@ $(document).ready(function() {
   const $EXPORT = $('#export');
 
   const newTr = `
-    <tr class="hide">
+    <tr>
       <td class="pt-3-half text-center">1</td>
       <td class="pt-3-half text-center" contenteditable="true"></td>
       <td class="pt-3-half text-center" contenteditable="true"></td>
@@ -30,16 +30,16 @@ $(document).ready(function() {
     }
   });
 
-  
+
   $tableID.on('click', '.table-remove', function() {
     $(this).parents('tr').detach();
     // alert(table_index);
     table_index = table_index - 1;
-    
+
 
   });
 
- 
+
 
  // // A few jQuery helpers for exporting only
  // jQuery.fn.pop = [].pop;
@@ -74,4 +74,4 @@ $(document).ready(function() {
  //   // Output the result
  //   $EXPORT.text(JSON.stringify(data));
  // });
- }); 
+});
